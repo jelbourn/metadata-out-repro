@@ -1,0 +1,39 @@
+// TypeScript config file that extends the default tsconfig file for the cdk. This config is
+// used to compile the tests for Karma. Since the code will run inside of the browser, the target
+// needs to be ES5. The format needs to be CommonJS since Karma only supports that module format.
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "declaration": true,
+    "stripInternal": false,
+    "noUnusedParameters": true,
+    "strictNullChecks": true,
+    "newLine": "LF",
+    "moduleResolution": "node",
+    "outDir": "../../dist/packages/cdk",
+    "rootDir": ".",
+    "sourceMap": true,
+    "inlineSources": true,
+    "lib": ["es2015", "dom"],
+    "skipLibCheck": true,
+    "importHelpers": false,
+    "module": "commonjs",
+    "target": "es5",
+    "experimentalDecorators": true,
+    "paths": {
+      "@angular/cdk/*": ["./*"]
+    }
+  },
+  "angularCompilerOptions": {
+    "annotateForClosureCompiler": true,
+    "strictMetadataEmit": true,
+    "skipTemplateCodegen": true,
+    "trace": true
+  },
+  "files": [
+    "./index.ts"
+  ],
+  "include": [
+    "./*/*.ts"
+  ]
+}
